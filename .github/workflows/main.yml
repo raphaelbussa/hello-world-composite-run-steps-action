@@ -12,5 +12,6 @@ jobs:
       uses: ./.github/actions/hello
       with:
         who-to-greet: 'Mona the Octocat'
+        test-secret: ${{ secrets.TEST }}
     - run: echo random-number ${{ steps.foo.outputs.random-number }}
       shell: bash
