@@ -1,6 +1,8 @@
 name: 'Hello World'
 description: 'Greet someone'
 inputs:
+  test-secret:
+    required: true
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
@@ -17,5 +19,5 @@ runs:
     - id: random-number-generator
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
       shell: bash
-    - run: echo ${{ secrets.TEST }}
+    - run: echo ${{ inputs.test-secret }}.
       shell: bash
